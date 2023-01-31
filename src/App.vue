@@ -1,12 +1,15 @@
 <script setup>
-import swapiVue from './components/swapi.vue';
+import headerNav from './components/headerNav.vue';
 
-import ApiURL from './store/apiStorage';
-
-
-console.log(ApiURL)
 </script>
 
+
+<template>
+  <h2>hej</h2>
+  <headerNav />
+</template>
+
+<!-- 
 <template>
 
   <header>
@@ -25,15 +28,15 @@ console.log(ApiURL)
   </header>
 
   <swapiVue />
-</template>
+</template> -->
 
 
-<style>
+<!-- <style>
 
 header {
   background-color: aqua;
 }
 
-</style>
+</style> -->
 
 

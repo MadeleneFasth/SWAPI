@@ -18,20 +18,38 @@
 }
 
 
-fetch('https://swapi.dev/api/?format=json')
-.then(response => response.json())
-.then(response => console.table(response))
+// fetch('https://swapi.dev/api/?format=json')
+// .then(response => response.json())
+// .then(response => console.table(response))
 
 </script>
 
 
 <template>
-    <div v-for="(item, index) in listItems">
-      <a v-bind:href="item">{{index}}</a>
-    </div>
-  </template>
+    <nav>
+        <li v-for="(item, index) in listItems">
+        <a v-bind:href="item">{{index}}</a>
+        </li>
+    </nav>
+</template>
 
-<!-- 
+
 <style>
 
-</style> -->
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+
+    height: 8em;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+</style>

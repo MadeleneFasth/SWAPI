@@ -23,12 +23,6 @@ import undernav from './undernav.vue';
             .catch(err => console.log(err.message))
         },
         methods: {
-            // doThisOnClick() {
-            //     fetch("https://swapi.dev/api/people/?format=json")
-            //     .then(res => res.json())
-            //     .then(data => this.Item = data)
-            //     .catch(err => console.log(err.message))
-            //     console.table(this.Item)
                 
             async doThisOnClick() {
                 const res = await fetch("https://swapi.dev/api/people/?format=json");

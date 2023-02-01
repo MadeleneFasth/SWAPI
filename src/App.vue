@@ -1,6 +1,5 @@
 <script setup>
 import headerNav from './components/headerNav.vue';
-import undernav from './components/undernav.vue';
 
 </script>
 

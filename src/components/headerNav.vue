@@ -1,19 +1,28 @@
 <script>
 import { VueElement } from 'vue';
-import undernav from './undernav.vue';
+import peopleComp from './peopleComp.vue';
+import planetsComp from './planetsComp.vue';
 
 
   export default {
     components: {
-        undernav
+        peopleComp,
+        planetsComp
     },
         data() {
             return {
                 listItems: [],
                 item: {
                 }, 
+                planetItem: {
+
+                },
+
+
                 characters: [],
-                clickedName: ''
+                clickedName: '',
+                planets: [],
+                clickedPlanet: ''
             }
         },
         mounted() {
@@ -21,16 +30,28 @@ import undernav from './undernav.vue';
             .then(res => res.json())
             .then(data => this.listItems = data)
             .catch(err => console.log(err.message))
+            console.log(this.listItems.data)
+
         },
         methods: {
                 
-            async doThisOnClick() {
+            async clickOnPeople() {
                 const res = await fetch("https://swapi.dev/api/people/?format=json");
                 const finalRes = await res.json();
                 this.item = finalRes;
                 this.characters = finalRes.results;
-                console.table(finalRes.results)
+                // console.table(finalRes.results)
+            },
+
+            async clickOnPlanets() {
+                const res = await fetch("https://swapi.dev/api/planets/?format=json");
+                const finalRes = await res.json();
+                this.item = finalRes;
+                this.planets = finalRes.results;
+                // console.table(finalRes.results)
             }
+
+
         },
 
     }
@@ -44,26 +65,27 @@ import undernav from './undernav.vue';
 <template>
 
     <nav>
-        <li v-for="(path, title) in listItems">
-        <!-- <a v-bind:href="item">{{index}}</a> -->
-        <button @click="doThisOnClick">{{title}}</button>
-        </li>
+        <button @click="clickOnPeople">People</button>
+        <button @click="clickOnPlanets">Planets</button>
+        <button @click="clickOnFilms">Films</button>
+        <button @click="clickOnSpecies">Species</button>
+        <button @click="clickOnVehicles">Vehicles</button>
+        <button @click="clickOnStarships">Starships</button>
     </nav>
 
     <div>
-        <!-- <li v-for="(a, b) in item">
-        >{{b}}
-        </li> -->
-
         <li v-for="character in characters">
         ><label @click="clickedName = character.name">{{character.name}}</label>
-        <undernav v-bind = 'character' v-if = 'character.name == clickedName' />
+        <peopleComp v-bind = 'character' v-if = 'character.name == clickedName' />
         </li>
     </div>
-<!-- 
-    <p v-for="name in Items">
-{{ name }}
-    </p> -->
+    
+    <div>
+        <li v-for="planet in planets">
+        ><label @click="clickedPlanet = planet.name">{{planet.name}}</label>
+        <planetsComp v-bind = 'planet' v-if = 'planet.name == clickedPlanet' />
+        </li>
+    </div>
 
 
 </template>

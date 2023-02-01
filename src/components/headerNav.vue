@@ -4,12 +4,17 @@ import peopleComp from './peopleComp.vue';
 import planetsComp from './planetsComp.vue';
 import filmsComp from './filmsComp.vue';
 
+import starshipsComp from './starshipsComp.vue'
+//import all components
 
   export default {
     components: {
         peopleComp,
-        planetsComp, 
-        filmsComp
+        planetsComp,
+        filmsComp,
+        // speciesComp,
+        // VehiclesComp,
+        starshipsComp
     },
         data() {
             return {
@@ -92,6 +97,12 @@ import filmsComp from './filmsComp.vue';
             }
 
 
+
+
+
+            
+
+
         },
 
     }
@@ -115,7 +126,7 @@ import filmsComp from './filmsComp.vue';
 
     <div>
         <li v-for="person in people">
-        <label @click="clickOnPeople = person.name">{{person.name}}</label>
+        <label @click="clickedName = person.name">{{person.name}}</label>
         <peopleComp v-bind = 'person' v-if = 'person.name == clickedName' />
         </li>
     </div>
@@ -126,34 +137,34 @@ import filmsComp from './filmsComp.vue';
         <planetsComp v-bind = 'planet' v-if = 'planets.name == clickedPlanet' />
         </li>
     </div>
-
+<!-- 
     <div>
         <li v-for="film in films">
-        <label @click="clickOnFilms = film.title">{{film.title}}</label>
-        <filmsComp v-bind = 'film' v-if = 'film.title == clickedFilm' />
+        ><label @click="clickOnFilms = film.name">{{film.name}}</label>
+        <filmsComp v-bind = 'film' v-if = 'film.name == clickedFilm' />
         </li>
     </div>
 
-    <!-- <div>
+    <div>
         <li v-for="specie in species">
-        <label @click="clickedPlanet = planet.name">{{planet.name}}</label>
+        ><label @click="clickedPlanet = planet.name">{{planet.name}}</label>
         <speciesComp v-bind = 'planet' v-if = 'planet.name == clickedPlanet' />
         </li>
     </div>
 
     <div>
         <li v-for="vehicle in vehicles">
-        <label @click="clickedPlanet = planet.name">{{planet.name}}</label>
+        ><label @click="clickedPlanet = planet.name">{{planet.name}}</label>
         <vehiclesComp v-bind = 'planet' v-if = 'planet.name == clickedPlanet' />
         </li>
-    </div>
+    </div> -->
 
     <div>
         <li v-for="starship in starships">
-        <label @click="clickedPlanet = planet.name">{{planet.name}}</label>
-        <starshipsComp v-bind = 'planet' v-if = 'planet.name == clickedPlanet' />
+        ><label @click="clickOnStarships = starship.name">{{starship.name}}</label>
+        <starshipsComp v-bind = 'starship' v-if = 'starship.name == clickedPlanet' />
         </li>
-    </div> -->
+    </div>
 
 </template>
 

@@ -51,9 +51,6 @@ import planetsComp from './planetsComp.vue';
                 // console.table(finalRes.results)
             }
 
-
-        },
-
     }
 
 

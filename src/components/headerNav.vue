@@ -52,7 +52,7 @@ import starshipsComp from './starshipsComp.vue'
         methods: {
                 
             async clickOnPeople() {
-                console.log('people clicked');
+                // console.log('people clicked');
                 const res = await fetch("https://swapi.dev/api/people/?format=json");
                 const finalRes = await res.json();
                 this.item = finalRes;
@@ -60,7 +60,7 @@ import starshipsComp from './starshipsComp.vue'
             },
 
             async clickOnPlanets() {
-                console.log('planet clicked');
+                // console.log('planet clicked');
                 const res = await fetch("https://swapi.dev/api/planets/?format=json");
                 const finalRes = await res.json();
                 this.item = finalRes;
@@ -68,7 +68,7 @@ import starshipsComp from './starshipsComp.vue'
             },
 
             async clickOnFilms() {
-                console.log('film clicked');
+                // console.log('film clicked');
                 const res = await fetch("https://swapi.dev/api/films/?format=json");
                 const finalRes = await res.json();
                 this.item = finalRes;

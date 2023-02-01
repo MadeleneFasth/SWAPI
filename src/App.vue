@@ -13,7 +13,7 @@ import undernav from './components/undernav.vue';
   <!-- </header> -->
 
   <article>
-    <undernav />
+    <!-- <undernav /> -->
   </article>
 
 </template>

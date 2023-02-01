@@ -11,22 +11,27 @@ import planetsComp from './planetsComp.vue';
     },
         data() {
             return {
+
                 listItems: [],
                 item: {
                 }, 
-                // planetItem: {
+                people: [],
+                clickedName: '',
 
-                // },
-                globalList: [],
-                clickedItem: '',
+                planets: [],
+                clickedPlanet: '',
 
-                // componentsList: []
+                films: [],
+                clickedFilm: '',
+                
+                species: [],
+                clickedSpecies: '',
 
-
-                // characters: [],
-                // clickedName: '',
-                // planets: [],
-                // clickedPlanet: ''
+                vehicles: [],
+                clickedVehicle: '',
+                
+                starships: [],
+                clickedStarship: ''
             }
         },
         mounted() {
@@ -43,22 +48,47 @@ import planetsComp from './planetsComp.vue';
                 const res = await fetch("https://swapi.dev/api/people/?format=json");
                 const finalRes = await res.json();
                 this.item = finalRes;
-                this.globalList = finalRes.results;
-                // console.table(finalRes.results)
+                this.characters = finalRes.results;
             },
 
             async clickOnPlanets() {
-                // this.componentsList.push(planetsComp);
-
                 const res = await fetch("https://swapi.dev/api/planets/?format=json");
                 const finalRes = await res.json();
                 this.item = finalRes;
-                this.globalList = finalRes.results;
-                // console.table(componentsList)
+                this.planets = finalRes.results;
+            },
 
-                // console.table(finalRes.results)
+            async clickOnFilms() {
+                const res = await fetch("https://swapi.dev/api/films/?format=json");
+                const finalRes = await res.json();
+                this.item = finalRes;
+                this.films = finalRes.results;
+            },
 
+            async clickOnSpecies() {
+                const res = await fetch("https://swapi.dev/api/species/?format=json");
+                const finalRes = await res.json();
+                this.item = finalRes;
+                this.species = finalRes.results;
+            },
+
+            async clickOnVehicles() {
+                const res = await fetch("https://swapi.dev/api/vehicles/?format=json");
+                const finalRes = await res.json();
+                this.item = finalRes;
+                this.vehicles = finalRes.results;
+            },
+
+            async clickOnStarships() {
+                const res = await fetch("https://swapi.dev/api/starships/?format=json");
+                const finalRes = await res.json();
+                this.item = finalRes;
+                this.starships = finalRes.results;
             }
+
+
+
+
 
             
 
@@ -85,54 +115,46 @@ import planetsComp from './planetsComp.vue';
     </nav>
 
     <div>
-        <li v-for="character in globalList">
-        <label @click="clickedItem = character.name">{{character.name}}</label>
-        <peopleComp v-bind = 'character' v-if = 'character.name == clickedItem' />
-        </li>
-    </div>
-
-    <!-- <div>
-        <li v-for="planets in globalList">
-        ><label @click="clickedItem = planets.name">{{planets.name}}</label>
-        <planetsComp v-bind = 'planets' v-if = 'planets.name == clickedItem' />
-        </li>
-    </div> -->
-<!-- 
-    <div>
-        <li v-for="planet in planets">
-        ><label @click="clickedPlanet = planet.name">{{planet.name}}</label>
-        <planetsComp v-bind = 'planet' v-if = 'planet.name == clickedPlanet' />
-        </li>
-    </div> -->
-
-    <!-- <div>
-        <li v-for="planet in planets">
-        ><label @click="clickedPlanet = planet.name">{{planet.name}}</label>
-        <planetsComp v-bind = 'planet' v-if = 'planet.name == clickedPlanet' />
+        <li v-for="person in people">
+        <label @click="clickOnPeople = person.name">{{person.name}}</label>
+        <peopleComp v-bind = 'person' v-if = 'person.name == clickedName' />
         </li>
     </div>
 
     <div>
         <li v-for="planet in planets">
-        ><label @click="clickedPlanet = planet.name">{{planet.name}}</label>
-        <planetsComp v-bind = 'planet' v-if = 'planet.name == clickedPlanet' />
+        ><label @click="clickOnPlanets = planet.name">{{planet.name}}</label>
+        <planetsComp v-bind = 'planet' v-if = 'planets.name == clickedPlanet' />
         </li>
     </div>
 
     <div>
-        <li v-for="planet in planets">
-        ><label @click="clickedPlanet = planet.name">{{planet.name}}</label>
-        <planetsComp v-bind = 'planet' v-if = 'planet.name == clickedPlanet' />
+        <li v-for="film in films">
+        ><label @click="clickOnFilms = film.name">{{film.name}}</label>
+        <filmsComp v-bind = 'film' v-if = 'film.name == clickedFilm' />
         </li>
     </div>
 
     <div>
-        <li v-for="planet in planets">
+        <li v-for="specie in species">
         ><label @click="clickedPlanet = planet.name">{{planet.name}}</label>
-        <planetsComp v-bind = 'planet' v-if = 'planet.name == clickedPlanet' />
+        <speciesComp v-bind = 'planet' v-if = 'planet.name == clickedPlanet' />
         </li>
-    </div> -->
+    </div>
 
+    <div>
+        <li v-for="vehicle in vehicles">
+        ><label @click="clickedPlanet = planet.name">{{planet.name}}</label>
+        <vehiclesComp v-bind = 'planet' v-if = 'planet.name == clickedPlanet' />
+        </li>
+    </div>
+
+    <div>
+        <li v-for="starship in starships">
+        ><label @click="clickedPlanet = planet.name">{{planet.name}}</label>
+        <starshipsComp v-bind = 'planet' v-if = 'planet.name == clickedPlanet' />
+        </li>
+    </div>
 
 </template>
 

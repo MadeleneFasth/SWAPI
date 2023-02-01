@@ -14,15 +14,19 @@ import planetsComp from './planetsComp.vue';
                 listItems: [],
                 item: {
                 }, 
-                planetItem: {
+                // planetItem: {
 
-                },
+                // },
+                globalList: [],
+                clickedItem: '',
+
+                // componentsList: []
 
 
-                characters: [],
-                clickedName: '',
-                planets: [],
-                clickedPlanet: ''
+                // characters: [],
+                // clickedName: '',
+                // planets: [],
+                // clickedPlanet: ''
             }
         },
         mounted() {
@@ -30,7 +34,7 @@ import planetsComp from './planetsComp.vue';
             .then(res => res.json())
             .then(data => this.listItems = data)
             .catch(err => console.log(err.message))
-            console.log(this.listItems.data)
+            // console.log(this.listItems.data)
 
         },
         methods: {
@@ -39,17 +43,24 @@ import planetsComp from './planetsComp.vue';
                 const res = await fetch("https://swapi.dev/api/people/?format=json");
                 const finalRes = await res.json();
                 this.item = finalRes;
-                this.characters = finalRes.results;
+                this.globalList = finalRes.results;
                 // console.table(finalRes.results)
             },
 
             async clickOnPlanets() {
+                // this.componentsList.push(planetsComp);
+
                 const res = await fetch("https://swapi.dev/api/planets/?format=json");
                 const finalRes = await res.json();
                 this.item = finalRes;
-                this.planets = finalRes.results;
+                this.globalList = finalRes.results;
+                // console.table(componentsList)
+
                 // console.table(finalRes.results)
+
             }
+
+            
 
 
         },
@@ -59,7 +70,7 @@ import planetsComp from './planetsComp.vue';
 
 </script>
 
-
+<!-- characters[] görs till global lista(döper om), beroende på vad man klickar på skickas resultatet in i listan -->
 
 
 <template>
@@ -74,18 +85,53 @@ import planetsComp from './planetsComp.vue';
     </nav>
 
     <div>
-        <li v-for="character in characters">
-        ><label @click="clickedName = character.name">{{character.name}}</label>
-        <peopleComp v-bind = 'character' v-if = 'character.name == clickedName' />
+        <li v-for="character in globalList">
+        <label @click="clickedItem = character.name">{{character.name}}</label>
+        <peopleComp v-bind = 'character' v-if = 'character.name == clickedItem' />
         </li>
     </div>
-    
+
+    <!-- <div>
+        <li v-for="planets in globalList">
+        ><label @click="clickedItem = planets.name">{{planets.name}}</label>
+        <planetsComp v-bind = 'planets' v-if = 'planets.name == clickedItem' />
+        </li>
+    </div> -->
+<!-- 
+    <div>
+        <li v-for="planet in planets">
+        ><label @click="clickedPlanet = planet.name">{{planet.name}}</label>
+        <planetsComp v-bind = 'planet' v-if = 'planet.name == clickedPlanet' />
+        </li>
+    </div> -->
+
+    <!-- <div>
+        <li v-for="planet in planets">
+        ><label @click="clickedPlanet = planet.name">{{planet.name}}</label>
+        <planetsComp v-bind = 'planet' v-if = 'planet.name == clickedPlanet' />
+        </li>
+    </div>
+
     <div>
         <li v-for="planet in planets">
         ><label @click="clickedPlanet = planet.name">{{planet.name}}</label>
         <planetsComp v-bind = 'planet' v-if = 'planet.name == clickedPlanet' />
         </li>
     </div>
+
+    <div>
+        <li v-for="planet in planets">
+        ><label @click="clickedPlanet = planet.name">{{planet.name}}</label>
+        <planetsComp v-bind = 'planet' v-if = 'planet.name == clickedPlanet' />
+        </li>
+    </div>
+
+    <div>
+        <li v-for="planet in planets">
+        ><label @click="clickedPlanet = planet.name">{{planet.name}}</label>
+        <planetsComp v-bind = 'planet' v-if = 'planet.name == clickedPlanet' />
+        </li>
+    </div> -->
 
 
 </template>

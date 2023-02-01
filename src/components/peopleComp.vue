@@ -20,6 +20,7 @@ export default {
 
 </script>
 
+
 //nästa steg att ta ut info från api vägen (films, species etc.)
 <template>
     <div class="card">

@@ -1,10 +1,11 @@
 <script>
-// import { VueElement } from 'vue';
-import subCategories from './subCategories.vue';
+import { VueElement } from 'vue';
+import undernav from './undernav.vue';
+
 
   export default {
     components: {
-        subCategories
+        undernav
     },
         data() {
             return {
@@ -23,18 +24,20 @@ import subCategories from './subCategories.vue';
         },
         methods: {
                 
-                async doThisOnClick() {
-                    const res = await fetch("https://swapi.dev/api/people/?format=json");
-                    const finalRes = await res.json();
-                    this.item = finalRes;
-                    this.characters = finalRes.results;
-                    console.table(finalRes.results)
-                }
-            },
+            async doThisOnClick() {
+                const res = await fetch("https://swapi.dev/api/people/?format=json");
+                const finalRes = await res.json();
+                this.item = finalRes;
+                this.characters = finalRes.results;
+                console.table(finalRes.results)
+            }
+        },
+
     }
 
 
 </script>
+
 
 
 
@@ -46,6 +49,22 @@ import subCategories from './subCategories.vue';
         <button @click="doThisOnClick">{{title}}</button>
         </li>
     </nav>
+
+    <div>
+        <!-- <li v-for="(a, b) in item">
+        >{{b}}
+        </li> -->
+
+        <li v-for="character in characters">
+        ><label @click="clickedName = character.name">{{character.name}}</label>
+        <undernav v-bind = 'character' v-if = 'character.name == clickedName' />
+        </li>
+    </div>
+<!-- 
+    <p v-for="name in Items">
+{{ name }}
+    </p> -->
+
 
 </template>
 

@@ -1,7 +1,6 @@
 <script setup>
 import headerNav from './components/headerNav.vue';
-// import card from './components/card.vue';
-import subCategories from './components/subCategories.vue'
+import undernav from './components/undernav.vue';
 
 </script>
 
@@ -14,7 +13,7 @@ import subCategories from './components/subCategories.vue'
   <!-- </header> -->
 
   <article>
-    <subCategories />
+    <undernav />
   </article>
 
 </template>

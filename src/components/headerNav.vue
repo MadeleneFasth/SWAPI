@@ -3,7 +3,8 @@ import { VueElement } from 'vue';
 import peopleComp from './peopleComp.vue';
 import planetsComp from './planetsComp.vue';
 import filmsComp from './filmsComp.vue';
-
+// import speciesComp from './.vue'
+import vehiclesComp from './vehiclesComp.vue'
 import starshipsComp from './starshipsComp.vue'
 //import all components
 
@@ -13,7 +14,7 @@ import starshipsComp from './starshipsComp.vue'
         planetsComp,
         filmsComp,
         // speciesComp,
-        // VehiclesComp,
+        vehiclesComp,
         starshipsComp
     },
         data() {
@@ -31,8 +32,8 @@ import starshipsComp from './starshipsComp.vue'
                 films: [],
                 clickedFilm: '',
                 
-                species: [],
-                clickedSpecies: '',
+                // species: [],
+                // clickedSpecies: '',
 
                 vehicles: [],
                 clickedVehicle: '',
@@ -52,7 +53,7 @@ import starshipsComp from './starshipsComp.vue'
         methods: {
                 
             async clickOnPeople() {
-                // console.log('people clicked');
+                console.log('people clicked');
                 const res = await fetch("https://swapi.dev/api/people/?format=json");
                 const finalRes = await res.json();
                 this.item = finalRes;
@@ -60,7 +61,7 @@ import starshipsComp from './starshipsComp.vue'
             },
 
             async clickOnPlanets() {
-                // console.log('planet clicked');
+                console.log('planet clicked');
                 const res = await fetch("https://swapi.dev/api/planets/?format=json");
                 const finalRes = await res.json();
                 this.item = finalRes;
@@ -68,7 +69,7 @@ import starshipsComp from './starshipsComp.vue'
             },
 
             async clickOnFilms() {
-                // console.log('film clicked');
+                console.log('film clicked');
                 const res = await fetch("https://swapi.dev/api/films/?format=json");
                 const finalRes = await res.json();
                 this.item = finalRes;
@@ -95,14 +96,6 @@ import starshipsComp from './starshipsComp.vue'
                 this.item = finalRes;
                 this.starships = finalRes.results;
             }
-
-
-
-
-
-            
-
-
         },
 
     }
@@ -133,36 +126,36 @@ import starshipsComp from './starshipsComp.vue'
 
     <div>
         <li v-for="planet in planets">
-        <label @click="clickOnPlanets = planet.name">{{planet.name}}</label>
-        <planetsComp v-bind = 'planet' v-if = 'planets.name == clickedPlanet' />
+        <label @click="clickedPlanet = planet.name">{{planet.name}}</label>
+        <planetsComp v-bind = 'planet' v-if = 'planet.name == clickedPlanet' />
         </li>
     </div>
-<!-- 
+
     <div>
         <li v-for="film in films">
-        ><label @click="clickOnFilms = film.name">{{film.name}}</label>
+        ><label @click="clickedFilm = film.name">{{film.name}}</label>
         <filmsComp v-bind = 'film' v-if = 'film.name == clickedFilm' />
         </li>
     </div>
 
-    <div>
+    <!-- <div>
         <li v-for="specie in species">
-        ><label @click="clickedPlanet = planet.name">{{planet.name}}</label>
-        <speciesComp v-bind = 'planet' v-if = 'planet.name == clickedPlanet' />
-        </li>
-    </div>
-
-    <div>
-        <li v-for="vehicle in vehicles">
-        ><label @click="clickedPlanet = planet.name">{{planet.name}}</label>
-        <vehiclesComp v-bind = 'planet' v-if = 'planet.name == clickedPlanet' />
+        ><label @click="clickedSpecies = specie.name">{{specie.name}}</label>
+        <speciesComp v-bind = 'specie' v-if = 'specie.name == clickedSpecies' />
         </li>
     </div> -->
 
     <div>
+        <li v-for="vehicle in vehicles">
+        ><label @click="clickedVehicle = vehicle.name">{{vehicle.name}}</label>
+        <vehiclesComp v-bind = 'vehicle' v-if = 'vehicle.name == clickedVehicle' />
+        </li>
+    </div>
+
+    <div>
         <li v-for="starship in starships">
-        ><label @click="clickOnStarships = starship.name">{{starship.name}}</label>
-        <starshipsComp v-bind = 'starship' v-if = 'starship.name == clickedPlanet' />
+        ><label @click="clickedStarship = starship.name">{{starship.name}}</label>
+        <starshipsComp v-bind = 'starship' v-if = 'starship.name == clickedStarship' />
         </li>
     </div>
 

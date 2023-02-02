@@ -5,15 +5,8 @@ import headerNav from './components/headerNav.vue';
 
 
 <template>
-  <!-- <header> -->
-    <h1>SWAPI</h1>
-    <p>The Star Wars API</p>
-    <headerNav />
-  <!-- </header> -->
-
-  <article>
-    <!-- <undernav /> -->
-  </article>
+ 
+  <headerNav />
 
 </template>
 

@@ -128,10 +128,8 @@ import starshipsComp from './starshipsComp.vue';
 
 <div class="sub_category">
     <li v-for="item in globalList">
-   
             <label @click="clickedItem = item.name ">{{item.name}}</label>
             <component :is="comp" v-bind = 'item' v-if = 'item.name == clickedItem'/>
-
     </li>
 
 
@@ -188,13 +186,22 @@ li {
 }
 
 .sub_category {
+    min-height: 800px;
     position: relative;
     padding: 1rem;
     background-color: #808080;
 }
 
 .card {
+    min-height: 400px;
+    min-width: 600px;
+
+    padding: 2rem;
     position: absolute;
+    background-color: white;
+    right: 0; 
+    top: 0;
+    margin: 8em 12em 12em 12em;
 }
 
 a {

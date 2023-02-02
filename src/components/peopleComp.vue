@@ -41,10 +41,3 @@ export default {
     </div>
 </template>
 
-<style scoped>
-.card {
-    background-color: white;
-    right: 0; 
-    top: 0;
-}
-</style>

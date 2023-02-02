@@ -51,9 +51,9 @@ export default {
         margin-bottom: 0.5rem;
     }
 
-    a {
+    /* a {
         
-    }
+    } */
 </style>
 
 

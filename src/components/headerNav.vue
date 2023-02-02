@@ -49,6 +49,7 @@ import starshipsComp from './starshipsComp.vue';
                 const finalRes = await res.json();
                 this.item = finalRes;
                 this.globalList = finalRes.results;
+                this.filmsList = []
             },
 
             async clickOnPlanets() {
@@ -62,7 +63,6 @@ import starshipsComp from './starshipsComp.vue';
             },
 
             async clickOnFilms() {
-                console.log('hej')
                 let thisComp = filmsComp;
                 this.comp = thisComp;
                 const res = await fetch("https://swapi.dev/api/films/?format=json");
@@ -115,7 +115,6 @@ import starshipsComp from './starshipsComp.vue';
     <header>
         <img src="../assets/starvarsSVGloggo.svg"/>
         <h2>The only Star Wars dictionary you'll ever need</h2>
-        <h3>The only Star Wars dictionary you'll ever need</h3>
         <nav>
             <ul class="nav-ul">
                 <li class="nav-list" @click="clickOnPeople">People</li>

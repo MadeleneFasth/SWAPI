@@ -211,6 +211,7 @@ header h2 {
 }
 
 .sub_category li {
+    background-image: url(../assets/backgroundStars.png);
     font-family: 'Righteous', cursive;
     min-height: 4rem;
     max-width: 10rem;
@@ -227,6 +228,7 @@ header h2 {
 
 label {
     color: #ffe81fff;
+    text-align: center;
 }
 
 .sub_category {

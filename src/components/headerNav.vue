@@ -113,15 +113,18 @@ import starshipsComp from './starshipsComp.vue';
 
 <template>
     <header>
-        <h1>SWAPI</h1>
-        <p>The Star Wars API</p>
+        <img src="../assets/starvarsSVGloggo.svg"/>
+        <h2>The only Star Wars dictionary you'll ever need</h2>
+        <h3>The only Star Wars dictionary you'll ever need</h3>
         <nav>
-            <button @click="clickOnPeople">People</button>
-            <button @click="clickOnPlanets">Planets</button>
-            <button @click="clickOnFilms">Films</button>
-            <button @click="clickOnSpecies">Species</button>
-            <button @click="clickOnVehicles">Vehicles</button>
-            <button @click="clickOnStarships">Starships</button>
+            <ul class="nav-ul">
+                <li class="nav-list" @click="clickOnPeople">People</li>
+                <li class="nav-list" @click="clickOnPlanets">Planets</li>
+                <li class="nav-list" @click="clickOnFilms">Films</li>
+                <li class="nav-list" @click="clickOnSpecies">Species</li>
+                <li class="nav-list" @click="clickOnVehicles">Vehicles</li>
+                <li class="nav-list" @click="clickOnStarships">Starships</li>
+            </ul>
         </nav>
     </header>
 
@@ -144,7 +147,7 @@ import starshipsComp from './starshipsComp.vue';
 
 <style>
 
-button {
+/* button {
     min-width: 10rem;
     background-color: white;
     border: none;
@@ -152,9 +155,9 @@ button {
     margin: 1rem; 
     text-align: center;
     text-decoration: none;
-}
+} */
 
-nav {
+/* nav {
     background-color:  #B3B3B3;
     display: flex;
     justify-content: space-around;
@@ -164,9 +167,42 @@ nav {
     align-content: center;
     align-items: center;
     min-height: 10em;
+} */
+
+header {
+    background-color: black;
+    background-image: url(../assets/backgroundStars.png);
 }
 
-li {
+header h2 {
+    font-weight: lighter;
+    color: #ffe81fff;
+}
+
+.nav-ul {
+    /* background-color:  #B3B3B3; */
+    display: flex;
+    justify-content: space-around;
+    height: 4em;
+    /* align-items: flex-end; */
+    /* flex-wrap: wrap; */
+    /* justify-content: space-evenly; */
+    /* align-content: center; */
+    /* align-items: center; */
+    /* min-height: 10em; */
+}
+
+.nav-list {
+    font-family: 'Righteous', cursive;
+    color: #ffe81fff;
+    list-style: none;
+    border: .5px solid #ffe81fff;
+    flex: 1 1 100%;
+    text-align: center;
+}
+
+.sub_category li {
+    font-family: 'Righteous', cursive;
     min-height: 4rem;
     max-width: 10rem;
     list-style: none;

@@ -26,6 +26,8 @@ import starshipsComp from './starshipsComp.vue';
                 globalList: [],
                 clickedItem: '',
 
+                filmsList: [],
+
                 comp: []
 
             }
@@ -56,6 +58,7 @@ import starshipsComp from './starshipsComp.vue';
                 const finalRes = await res.json();
                 this.item = finalRes;
                 this.globalList = finalRes.results;
+                this.filmsList = []
             },
 
             async clickOnFilms() {
@@ -65,7 +68,8 @@ import starshipsComp from './starshipsComp.vue';
                 const res = await fetch("https://swapi.dev/api/films/?format=json");
                 const finalRes = await res.json();
                 this.item = finalRes;
-                this.globalList = finalRes.results;
+                this.filmsList = finalRes.results;
+                this.globalList = []
             },
 
             async clickOnSpecies() {
@@ -75,6 +79,7 @@ import starshipsComp from './starshipsComp.vue';
                 const finalRes = await res.json();
                 this.item = finalRes;
                 this.globalList = finalRes.results;
+                this.filmsList = []
             },
 
             async clickOnVehicles() {
@@ -84,6 +89,7 @@ import starshipsComp from './starshipsComp.vue';
                 const finalRes = await res.json();
                 this.item = finalRes;
                 this.globalList = finalRes.results;
+                this.filmsList = []
             },
 
             async clickOnStarships() {
@@ -93,6 +99,7 @@ import starshipsComp from './starshipsComp.vue';
                 const finalRes = await res.json();
                 this.item = finalRes;
                 this.globalList = finalRes.results;
+                this.filmsList = []
             }
         }
 
@@ -105,26 +112,30 @@ import starshipsComp from './starshipsComp.vue';
 
 
 <template>
-    <h1>SWAPI</h1>
-    <p>The Star Wars API</p>
-    <nav>
-        <button @click="clickOnPeople">People</button>
-        <button @click="clickOnPlanets">Planets</button>
-        <button @click="clickOnFilms">Films</button>
-        <button @click="clickOnSpecies">Species</button>
-        <button @click="clickOnVehicles">Vehicles</button>
-        <button @click="clickOnStarships">Starships</button>
-    </nav>
+    <header>
+        <h1>SWAPI</h1>
+        <p>The Star Wars API</p>
+        <nav>
+            <button @click="clickOnPeople">People</button>
+            <button @click="clickOnPlanets">Planets</button>
+            <button @click="clickOnFilms">Films</button>
+            <button @click="clickOnSpecies">Species</button>
+            <button @click="clickOnVehicles">Vehicles</button>
+            <button @click="clickOnStarships">Starships</button>
+        </nav>
+    </header>
+
 
 <div class="sub_category">
     <li v-for="item in globalList">
-        <div class="sub_list">
+   
             <label @click="clickedItem = item.name ">{{item.name}}</label>
             <component :is="comp" v-bind = 'item' v-if = 'item.name == clickedItem'/>
-        </div>
+
     </li>
 
-    <li v-for="item in globalList">
+
+    <li v-for="item in filmsList">
         <label @click="clickedItem = item.title ">{{item.title}}</label>
         <component :is="comp" v-bind = 'item' v-if = 'item.title == clickedItem'/>
     </li>
@@ -190,7 +201,5 @@ a {
     text-decoration: none;
 }
 
+
 </style>
-
-
-

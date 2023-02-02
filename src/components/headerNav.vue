@@ -95,15 +95,9 @@ import starshipsComp from './starshipsComp.vue'
                 const finalRes = await res.json();
                 this.item = finalRes;
                 this.starships = finalRes.results;
-            }, 
-            
-            selectClickedName(newClicked, category) {
-            // reset all names
-            if(category == "planet") this.clickedPlanet = newClicked;
-            console.log('selectClickedName funktionen kör')
-            this.clickedPlanet = category == "planet" ? newClicked : '';
-            },
-        }
+            }
+        },
+
     }
 
 
@@ -113,10 +107,7 @@ import starshipsComp from './starshipsComp.vue'
 
 
 <template>
-<header>
-    <h1>SWAPI</h1>
-    <p>The Star Wars API</p>
-</header>
+
     <nav>
         <button @click="clickOnPeople">People</button>
         <button @click="clickOnPlanets">Planets</button>
@@ -126,7 +117,7 @@ import starshipsComp from './starshipsComp.vue'
         <button @click="clickOnStarships">Starships</button>
     </nav>
 
-    <div class="sub_categories">
+    <div>
         <li v-for="person in people">
         <label @click="clickedName = person.name">{{person.name}}</label>
         <peopleComp v-bind = 'person' v-if = 'person.name == clickedName' />
@@ -135,15 +126,14 @@ import starshipsComp from './starshipsComp.vue'
 
     <div>
         <li v-for="planet in planets">
-        <!-- <label @click="clickedPlanet = planet.name">{{planet.name}}</label> -->
-        <label @click="() => selectClickedName(planet.name, 'planet')">{{planet.name}}</label>
+        <label @click="clickedPlanet = planet.name">{{planet.name}}</label>
         <planetsComp v-bind = 'planet' v-if = 'planet.name == clickedPlanet' />
         </li>
     </div>
 
     <div>
         <li v-for="film in films">
-        <label @click="clickedFilm = film.name">{{film.name}}</label>
+        ><label @click="clickedFilm = film.name">{{film.name}}</label>
         <filmsComp v-bind = 'film' v-if = 'film.name == clickedFilm' />
         </li>
     </div>
@@ -157,14 +147,14 @@ import starshipsComp from './starshipsComp.vue'
 
     <div>
         <li v-for="vehicle in vehicles">
-        <label @click="clickedVehicle = vehicle.name">{{vehicle.name}}</label>
+        ><label @click="clickedVehicle = vehicle.name">{{vehicle.name}}</label>
         <vehiclesComp v-bind = 'vehicle' v-if = 'vehicle.name == clickedVehicle' />
         </li>
     </div>
 
     <div>
         <li v-for="starship in starships">
-        <label @click="clickedStarship = starship.name">{{starship.name}}</label>
+        ><label @click="clickedStarship = starship.name">{{starship.name}}</label>
         <starshipsComp v-bind = 'starship' v-if = 'starship.name == clickedStarship' />
         </li>
     </div>
@@ -173,42 +163,16 @@ import starshipsComp from './starshipsComp.vue'
 
 
 <style>
-header {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
 
-    text-align: center;
-    font-family:Arial, Helvetica, sans-serif;
-    background-color: #CABEBE;
-    min-height: 10rem;
-}
 nav {
-    background-color:  #B3B3B3;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-content: center;
-    align-items: center;
-    min-height: 10em;
-}
+    justify-content: space-around;
+    align-items: flex-end;
 
-button {
-    min-width: 15rem;
-    background-color:#E6E6E6;
-    border: none;
-    padding: 15px 32px;
-    text-decoration: none;
-    font-size: 16px;
-}
-
-.sub_categories {
-    padding: 1rem;
-    background-color: #808080;
+    height: 8em;
 }
 
 li {
-    margin: 1rem;
     list-style: none;
 }
 

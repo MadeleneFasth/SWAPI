@@ -169,39 +169,42 @@ nav {
 li {
     min-height: 4rem;
     max-width: 10rem;
+    margin: 1rem;
     list-style: none;
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 2px solid black;
-    background-color: white; 
+
+    border: 4px solid #ffcc00ff;
+    background-color: transparent; 
+    
 }
 
-.sub_list {
-    background-color: aqua;
-}
-
-.sub_list label {
-    background-color: yellow;
+label {
+    color: #ffcc00ff;
 }
 
 .sub_category {
     min-height: 800px;
     position: relative;
     padding: 1rem;
-    background-color: #808080;
+    background-color: transparent;
 }
 
 .card {
+  
     height: 400px;
     width: 600px;
-
     padding: 2rem;
+
     position: absolute;
-    background-color: white;
     right: 0; 
     top: 0;
     margin: 8em 12em 12em 12em;
+
+    border: 4px solid #ffcc00ff;
+    color: #ffcc00ff;
+    background-color: transparent;
 }
 
 a {

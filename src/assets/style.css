@@ -1,13 +1,8 @@
 * {
     margin: 0;
     padding: 0;
+    background-color: black;
+
 }
 
-body {
-    background-color: rgb(202, 202, 202);
-}
-
-header {
-    background-color: rgb(170, 170, 170);
-}
 

@@ -116,16 +116,16 @@ import starshipsComp from './starshipsComp.vue';
         <button @click="clickOnStarships">Starships</button>
     </nav>
 
-<div>
+<div class="sub_category">
     <li v-for="item in globalList">
-        <label @click="clickedItem = item.name ">{{item.name}}</label>
-        
-        <component :is="comp" v-bind = 'item' v-if = 'item.name == clickedItem'/>
+        <div class="sub_list">
+            <label @click="clickedItem = item.name ">{{item.name}}</label>
+            <component :is="comp" v-bind = 'item' v-if = 'item.name == clickedItem'/>
+        </div>
     </li>
 
     <li v-for="item in globalList">
         <label @click="clickedItem = item.title ">{{item.title}}</label>
-        
         <component :is="comp" v-bind = 'item' v-if = 'item.title == clickedItem'/>
     </li>
 </div>
@@ -135,16 +135,55 @@ import starshipsComp from './starshipsComp.vue';
 
 <style>
 
+button {
+    min-width: 10rem;
+    background-color: white;
+    border: none;
+    padding: 1rem;
+    margin: 1rem; 
+    text-align: center;
+    text-decoration: none;
+}
+
 nav {
+    background-color:  #B3B3B3;
     display: flex;
     justify-content: space-around;
     align-items: flex-end;
-
-    height: 8em;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: center;
+    align-items: center;
+    min-height: 10em;
 }
 
 li {
+    min-height: 4rem;
+    max-width: 10rem;
     list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+    background-color: white; 
+}
+
+.sub_list {
+    background-color: aqua;
+}
+
+.sub_list label {
+    background-color: yellow;
+}
+
+.sub_category {
+    position: relative;
+    padding: 1rem;
+    background-color: #808080;
+}
+
+.card {
+    position: absolute;
 }
 
 a {

@@ -24,7 +24,8 @@ export default {
 //nästa steg att ta ut info från api vägen (films, species etc.)
 <template>
     <div class="card">
-        <h4>{{name}}</h4>
+        <h4 class="titel">{{name}}</h4>
+        <div>
         <h4>Height: {{height}}</h4>
         <h4>hair color: {{hair_color}}</h4>
         <h4>skin_color: {{skin_color}}</h4>
@@ -36,6 +37,14 @@ export default {
         <h4>species: <a href={{species}}>Go to species</a></h4>
         <h4>vehicles: <a href={{vehicles}}>Go to vehicles</a></h4>
         <h4>starships: <a href={{starships}}>Go to starships</a></h4>
+        </div>
     </div>
-
 </template>
+
+<style scoped>
+.card {
+    background-color: white;
+    right: 0; 
+    top: 0;
+}
+</style>

@@ -144,6 +144,10 @@ import starshipsComp from './starshipsComp.vue';
 
 <style>
 
+body {
+    position: relative;
+}
+
 button {
     min-width: 10rem;
     background-color: white;
@@ -175,35 +179,39 @@ li {
     justify-content: center;
     align-items: center;
 
-    border: 4px solid #ffcc00ff;
+    border: 4px solid #ffe81fff;
     background-color: transparent; 
     
 }
 
 label {
-    color: #ffcc00ff;
+    color: #ffe81fff;
 }
 
 .sub_category {
     min-height: 800px;
-    position: relative;
     padding: 1rem;
     background-color: transparent;
 }
 
 .card {
-  
-    height: 400px;
-    width: 600px;
+    height: 500px;
+    width: 500px;
     padding: 2rem;
 
     position: absolute;
+    left: 50%;
+    margin-left: -250px;
+    top: 50%;
+    margin-top: -250px;
+
+    /* 
     right: 0; 
     top: 0;
-    margin: 8em 12em 12em 12em;
+    margin: 8em 12em 12em 12em; */
 
-    border: 4px solid #ffcc00ff;
-    color: #ffcc00ff;
+    border: 4px solid #ffe81fff;
+    color: #ffe81fff;
     background-color: transparent;
 }
 

@@ -193,8 +193,8 @@ li {
 }
 
 .card {
-    min-height: 400px;
-    min-width: 600px;
+    height: 400px;
+    width: 600px;
 
     padding: 2rem;
     position: absolute;

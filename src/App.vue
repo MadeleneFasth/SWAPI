@@ -5,9 +5,7 @@ import headerNav from './components/headerNav.vue';
 
 
 <template>
- 
   <headerNav />
-
 </template>
 
 

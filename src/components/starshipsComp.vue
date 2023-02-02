@@ -25,21 +25,35 @@ export default {
 //nästa steg att ta ut info från api vägen (films, species etc.)
 <template>
     <div class="card">
-        <h4>{{name}}</h4>
-        <h4>model: {{model}}</h4>
-        <h4>manufacturer: {{manufacturer}}</h4>
-        <h4>cost_in_credits: {{cost_in_credits}}</h4>
-        <h4>length: {{length}}</h4>
-        <h4>max_atmosphering_speed: {{max_atmosphering_speed}}</h4>
-        <h4>crew: {{crew}}</h4>
-        <h4>passengers: {{passengers}}</h4>
-        <h4>cargo_capacity: {{cargo_capacity}}</h4>
-        <h4>consumables: {{consumables}}</h4>
-        <h4>hyperdrive_rating: {{crew}}</h4>
-        <h4>MGLT: {{MGLT}}</h4>
-        <h4>starship_class: {{starship_class}}</h4>
-        <h4>pilots: {{pilots}}</h4>
+        <h4 class="title">{{name}}</h4>
+        <div class="info">
+            <h4>Model: {{model}}</h4>
+            <h4>Manufacturer: {{manufacturer}}</h4>
+            <h4>Cost in credits: {{cost_in_credits}}</h4>
+            <h4>Length: {{length}}</h4>
+            <h4>Max atmosphering speed: {{max_atmosphering_speed}}</h4>
+            <h4>Crew: {{crew}}</h4>
+            <h4>Passengers: {{passengers}}</h4>
+            <h4>Cargo capacity: {{cargo_capacity}}</h4>
+            <h4>Consumables: {{consumables}}</h4>
+            <h4>Hyperdrive rating: {{crew}}</h4>
+            <h4>MGLT: {{MGLT}}</h4>
+            <h4>Starship_class: {{starship_class}}</h4>
+            <h4>Pilots: {{pilots}}</h4>
+        </div>
     </div>
 
 </template>
+
+<style scoped>
+    .title {
+        font-size: 30px;
+        margin-bottom: 1rem;
+    }
+
+    .info h4 {
+        margin-bottom: 0.5rem;
+    }
+
+</style>
 

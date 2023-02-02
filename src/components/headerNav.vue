@@ -147,6 +147,15 @@ import starshipsComp from './starshipsComp.vue';
 
 <style>
 
+body {
+    position: relative;
+}
+
+body {
+    position: relative;
+}
+
+
 /* button {
     min-width: 10rem;
     background-color: white;
@@ -205,39 +214,46 @@ header h2 {
     font-family: 'Righteous', cursive;
     min-height: 4rem;
     max-width: 10rem;
+    margin: 1rem;
     list-style: none;
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 2px solid black;
-    background-color: white; 
+
+    border: 4px solid #ffe81fff;
+    background-color: transparent; 
+    
 }
 
-.sub_list {
-    background-color: aqua;
-}
-
-.sub_list label {
-    background-color: yellow;
+label {
+    color: #ffe81fff;
 }
 
 .sub_category {
     min-height: 800px;
-    position: relative;
     padding: 1rem;
-    background-color: #808080;
+    background-color: transparent;
 }
 
 .card {
-    height: 400px;
-    width: 600px;
-
+    height: 500px;
+    width: 500px;
     padding: 2rem;
+
     position: absolute;
-    background-color: white;
+    left: 50%;
+    margin-left: -250px;
+    top: 50%;
+    margin-top: -250px;
+
+    /* 
     right: 0; 
     top: 0;
-    margin: 8em 12em 12em 12em;
+    margin: 8em 12em 12em 12em; */
+
+    border: 4px solid #ffe81fff;
+    color: #ffe81fff;
+    background-color: transparent;
 }
 
 a {

@@ -20,6 +20,8 @@ import starshipsComp from './starshipsComp.vue';
         data() {
             return {
 
+                pageCount: 2,
+
                 listItems: [],
                 item: {}, 
 
@@ -44,7 +46,8 @@ import starshipsComp from './starshipsComp.vue';
             async clickOnPeople() {
                 let thisComp = peopleComp;
                 this.comp = thisComp;
-                const res = await fetch("https://swapi.dev/api/people/?format=json");
+                // const res = await fetch("https://swapi.dev/api/people/?format=json");
+                const res = await fetch(`https://swapi.dev/api/people/?page=${this.pageCount}&format=json`);
                 const finalRes = await res.json();
                 this.item = finalRes;
                 this.globalList = finalRes.results;
@@ -129,8 +132,8 @@ import starshipsComp from './starshipsComp.vue';
 
 <div class="sub_category">
     <li v-for="item in globalList">
-            <label @click="clickedItem = item.name ">{{item.name}}</label>
-            <component :is="comp" v-bind = 'item' v-if = 'item.name == clickedItem'/>            
+            <label @click="clickedItem = item.name ">{{item.name}}</label> //OCH TA UT INDEX SOM SKICKAS TILL component. 
+            <component :is="comp" v-bind = 'item' v-if = 'item.name == clickedItem'/> // här vill jag skicka in namnet i en ny funktion som tar
     </li>
 
 

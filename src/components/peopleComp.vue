@@ -17,10 +17,11 @@ export default {
     'vehicles',
     'starships',
     'homeworld'
-],
+,
     // onNxtBtnClick(){
     //     console.log('hej')
-    // }
+    ], 
+// }
 
 }
 
@@ -39,7 +40,7 @@ export default {
                 <h4>Birth year: {{birth_year}}</h4>
                 <h4>Gender: {{gender}}</h4>
                 <h4>Homeworld: <a href={{homeworld}}>Go to homeworld</a></h4>
-                <h4>Films: <a href={{films}}>Go to films</a></h4>
+                <h4>Films: {{films}} Go to films </h4>
                 <h4>Species: <a href={{species}}>Go to species</a></h4>
                 <h4>Vehicles: <a href={{vehicles}}>Go to vehicles</a></h4>
                 <h4>Starships: <a href={{starships}}>Go to starships</a></h4>

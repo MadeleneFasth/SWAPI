@@ -8,4 +8,5 @@ SWAPI dev (https://swapi.dev/) är ett öppet API som tillåter en att med GET f
 
 ## Uppgiftsinstruktioner
 Trelloboard: https://trello.com/b/wnaX3llH/fasthlearners
+
 Miro: https://miro.com/app/board/uXjVPu9ttug=/

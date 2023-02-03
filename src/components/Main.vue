@@ -42,29 +42,28 @@ import StarshipsComp from './StarshipsComp.vue';
                 }
             },
                 
-            async clickOnPeople() {
+            clickOnPeople() {
                 this.clickFetch(PeopleComp, "https://swapi.dev/api/people/?format=json")
             },
 
-            async clickOnPlanets() {
+            clickOnPlanets() {
                 this.clickFetch(PlanetsComp, "https://swapi.dev/api/planets/?format=json")
             },
 
-            async clickOnFilms() {
+            clickOnFilms() {
                 let isFilmCategory = true;
                 this.clickFetch(FilmsComp, "https://swapi.dev/api/films/?format=json", isFilmCategory)
-
             },
 
-            async clickOnSpecies() {
+            clickOnSpecies() {
                 this.clickFetch(SpeciesComp, "https://swapi.dev/api/species/?format=json")
             },
 
-            async clickOnVehicles() {
+            clickOnVehicles() {
                 this.clickFetch(VehiclesComp, "https://swapi.dev/api/vehicles/?format=json")
             },
 
-            async clickOnStarships() {
+            clickOnStarships() {
                 this.clickFetch(StarshipsComp, "https://swapi.dev/api/starships/?format=json")
             },
 

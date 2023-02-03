@@ -112,8 +112,8 @@ import starshipsComp from './starshipsComp.vue';
 
 <div class="sub_category">
     <li v-for="item in globalList">
-            <label @click="clickedItem = item.name ">{{item.name}}</label> //OCH TA UT INDEX SOM SKICKAS TILL component. 
-            <component :is="comp" v-bind = 'item' v-if = 'item.name == clickedItem'/> // här vill jag skicka in namnet i en ny funktion som tar
+            <label @click="clickedItem = item.name ">{{item.name}}</label>
+            <component :is="comp" v-bind = 'item' v-if = 'item.name == clickedItem'/>
     </li>
 
 
@@ -177,7 +177,6 @@ header h2 {
 }
 
 .sub_category li {
-    background-image: url(../assets/backgroundStars.png);
     font-family: 'Righteous', cursive;
     min-height: 4rem;
     max-width: 10rem;
@@ -201,7 +200,6 @@ label {
 .sub_category {
     min-height: 800px;
     padding: 1rem;
-    /* background-color: transparent; */
 }
 
 .card {

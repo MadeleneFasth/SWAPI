@@ -13,8 +13,10 @@ export default {
    'population',
    'residents',
    'films'
-]    
+]
 }
+
+
 
 </script>
 

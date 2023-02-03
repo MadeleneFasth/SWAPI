@@ -20,7 +20,6 @@ import starshipsComp from './starshipsComp.vue';
         data() {
             return {
 
-                listItems: [],
                 item: {},
 
                 globalList: [],
@@ -31,13 +30,6 @@ import starshipsComp from './starshipsComp.vue';
                 comp: []
 
             }
-        },
-        mounted() {
-            fetch("https://swapi.dev/api/?format=json")
-            .then(res => res.json())
-            .then(data => this.listItems = data)
-            .catch(err => console.log(err.message))
-
         },
         methods: {
 
@@ -119,8 +111,6 @@ import starshipsComp from './starshipsComp.vue';
     </li>
 
     
-
-
     <li v-for="item in filmsList">
         <label @click="clickedItem = item.title ">{{item.title}}</label>
         <component :is="comp" v-bind = 'item' v-if = 'item.title == clickedItem'/>

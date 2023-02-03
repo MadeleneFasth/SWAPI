@@ -3,4 +3,9 @@
 
 
 ## Uppgiftsinstruktioner
+https://github.com/fe22-kyh/js2-examiniation
 SWAPI dev (https://swapi.dev/) är ett öppet API som tillåter en att med GET förfrågningar hämta information om entiteter från star wars franchise. I denna uppgift så ska du implementera en webbgränssnittslösning där du kan navigera informationen för dessa entiteter. Skapa ett gränssnitt där användaren kan välja på de 6 kategorierna som finns tillgängliga under SWAPI api:et.
+
+## Uppgiftsinstruktioner
+Trelloboard: https://trello.com/b/wnaX3llH/fasthlearners
+Miro: https://miro.com/app/board/uXjVPu9ttug=/

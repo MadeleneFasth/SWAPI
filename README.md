@@ -1,29 +1,5 @@
-# SWAPI
+# Grupparbete Javascript 2
+Syftet med denna uppgift är att ge studerande en möjlighet att visa att denne besitter förmågan att självständigt implementera en API-lösning med hjälp av något javascript ramverk (eller likartat bibliotek). Tidsåtgång ca. 1 vecka. 
 
-This template should help get you started developing with Vue 3 in Vite.
-
-## Recommended IDE Setup
-
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
+## Uppgiftsinstruktioner
+SWAPI dev (https://swapi.dev/) är ett öppet API som tillåter en att med GET förfrågningar hämta information om entiteter från star wars franchise. I denna uppgift så ska du implementera en webbgränssnittslösning där du kan navigera informationen för dessa entiteter. Skapa ett gränssnitt där användaren kan välja på de 6 kategorierna som finns tillgängliga under SWAPI api:et.

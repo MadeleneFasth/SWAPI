@@ -5,7 +5,7 @@
 
 export default {
     props: [
-            
+
     'name', 
     'height',
     'hair_color',
@@ -18,8 +18,7 @@ export default {
     'species',
     'vehicles',
     'starships',
-    'homeworld'
-,
+    'homeworld',
     // onNxtBtnClick(){
     //     console.log('hej')
     ], 

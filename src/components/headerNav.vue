@@ -42,7 +42,6 @@ import starshipsComp from './starshipsComp.vue';
         methods: {
                 
             async clickOnPeople() {
-                console.log('hej')
                 let thisComp = peopleComp;
                 this.comp = thisComp;
                 const res = await fetch("https://swapi.dev/api/people/?format=json");
@@ -108,8 +107,6 @@ import starshipsComp from './starshipsComp.vue';
 
 </script>
 
-<!-- characters[] görs till global lista(döper om), beroende på vad man klickar på skickas resultatet in i listan -->
-
 
 <template>
     <header>
@@ -125,13 +122,15 @@ import starshipsComp from './starshipsComp.vue';
                 <li class="nav-list" @click="clickOnStarships">Starships</li>
             </ul>
         </nav>
+        <button class="header-btn-prev" @click="onNxtBtnClick">previous</button>
+        <button class="header-btn-nxt">next</button>
     </header>
 
 
 <div class="sub_category">
     <li v-for="item in globalList">
             <label @click="clickedItem = item.name ">{{item.name}}</label>
-            <component :is="comp" v-bind = 'item' v-if = 'item.name == clickedItem'/>
+            <component :is="comp" v-bind = 'item' v-if = 'item.name == clickedItem'/>            
     </li>
 
 
@@ -139,21 +138,30 @@ import starshipsComp from './starshipsComp.vue';
         <label @click="clickedItem = item.title ">{{item.title}}</label>
         <component :is="comp" v-bind = 'item' v-if = 'item.title == clickedItem'/>
     </li>
+
 </div>
+
 
 </template>
 
 
 <style>
 
-body {
-    position: relative;
+.header-btn {
+    height: 3em;
+    width: 8em;
+    background-color: rgb(203, 22, 104);
 }
+
 
 body {
     position: relative;
+    background-image: url(../assets/backgroundStars.png);
 }
 
+header {
+padding-top: 3em;
+}
 
 /* button {
     min-width: 10rem;
@@ -177,14 +185,15 @@ body {
     min-height: 10em;
 } */
 
-header {
-    background-color: black;
-    background-image: url(../assets/backgroundStars.png);
+
+header img {
+padding-left: 1em;
 }
 
 header h2 {
     font-weight: lighter;
     color: #ffe81fff;
+    padding: .5em 0em 1em 1em;
 }
 
 .nav-ul {
@@ -202,11 +211,16 @@ header h2 {
 
 .nav-list {
     font-family: 'Righteous', cursive;
+    font-size: 2rem;
     color: #ffe81fff;
     list-style: none;
+
     border: .5px solid #ffe81fff;
+
+    display: flex;
     flex: 1 1 100%;
-    text-align: center;
+    justify-content: center;
+    align-items: center;
 }
 
 .sub_category li {
@@ -222,6 +236,7 @@ header h2 {
 
     border: 4px solid #ffe81fff;
     background-color: transparent; 
+    box-shadow: 2px 2px 5px  #ffe81fff;
     
 }
 
@@ -233,7 +248,7 @@ label {
 .sub_category {
     min-height: 800px;
     padding: 1rem;
-    background-color: transparent;
+    /* background-color: transparent; */
 }
 
 .card {
@@ -255,6 +270,7 @@ label {
     border: 4px solid #ffe81fff;
     color: #ffe81fff;
     background-color: transparent;
+    box-shadow: 2px 2px 6px #ffe81fff;
 }
 
 a {

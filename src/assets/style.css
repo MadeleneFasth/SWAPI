@@ -1,18 +1,8 @@
 * {
     margin: 0;
     padding: 0;
-    background-image: url(../assets/backgroundStars.png);
-
-
-}
-
-body {
-    background-color: rgb(202, 202, 202);
     font-family: 'Righteous', cursive;
 }
 
-header {
-    background-color: rgb(170, 170, 170);
-}
 
 

@@ -1,6 +1,8 @@
 <script>
 // import { registerRuntimeCompiler } from 'vue';
 
+// import headerNavVue from './headerNav.vue';
+
 export default {
     props: ['name', 
     'height',
@@ -15,7 +17,11 @@ export default {
     'vehicles',
     'starships',
     'homeworld'
-]    
+],
+    // onNxtBtnClick(){
+    //     console.log('hej')
+    // }
+
 }
 
 </script>
@@ -51,9 +57,6 @@ export default {
         margin-bottom: 0.5rem;
     }
 
-    /* a {
-        
-    } */
 </style>
 
 

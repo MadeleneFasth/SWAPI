@@ -118,9 +118,6 @@ import starshipsComp from './starshipsComp.vue';
     <li v-for="item in globalList">
             <label @click="clickedItem = item.name ">{{item.name}}</label>
             <component :is="comp" v-bind = 'item' v-if = 'item.name == clickedItem'/>
-            <div class="test">
-        <component :is="comp" v-bind = 'item' v-if = 'item.name == clickedItem'/>
-        </div>
     </li>
 
     
@@ -138,9 +135,6 @@ import starshipsComp from './starshipsComp.vue';
 
 
 <style>
-.test {
-    background-color: aqua;
-}
 
 .header-btn-prev, 
 .header-btn-nxt {

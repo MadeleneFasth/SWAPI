@@ -121,6 +121,10 @@ import starshipsComp from './starshipsComp.vue';
 
             onNxtBtnClick() {
                 this.clickFetch(this.comp, this.item.next);
+            },
+
+            onPrevBtnClick() {
+                this.clickFetch(this.comp, this.item.previous)
             }
         }
     }
@@ -143,7 +147,7 @@ import starshipsComp from './starshipsComp.vue';
                 <li class="nav-list" @click="clickOnStarships">Starships</li>
             </ul>
         </nav>
-        <button class="header-btn-prev">previous</button>
+        <button class="header-btn-prev" @click="onPrevBtnClick">previous</button>
         <button class="header-btn-nxt" @click="onNxtBtnClick">next</button>
     </header>
 

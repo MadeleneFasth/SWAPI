@@ -47,8 +47,8 @@ import starshipsComp from './starshipsComp.vue';
                 const finalRes = await res.json();
                 this.item = finalRes;
                 if(isFilmCategory) {
-                    this.globalList = []
                     this.filmsList = finalRes.results;
+                    this.globalList = []
                 } else {
                     this.globalList = finalRes.results;
                     this.filmsList = []
@@ -64,7 +64,9 @@ import starshipsComp from './starshipsComp.vue';
             },
 
             async clickOnFilms() {
-                this.clickFetch(filmsComp, "https://swapi.dev/api/films/?format=json")
+                let isFilmCategory = true;
+                this.clickFetch(filmsComp, "https://swapi.dev/api/films/?format=json", isFilmCategory)
+
             },
 
             async clickOnSpecies() {
@@ -115,6 +117,8 @@ import starshipsComp from './starshipsComp.vue';
             <label @click="clickedItem = item.name ">{{item.name}}</label>
             <component :is="comp" v-bind = 'item' v-if = 'item.name == clickedItem'/>
     </li>
+
+    
 
 
     <li v-for="item in filmsList">

@@ -128,6 +128,19 @@ import starshipsComp from './starshipsComp.vue';
 
 <style>
 
+.header-btn-prev, 
+.header-btn-nxt {
+    font-family: 'Righteous', cursive;
+    text-align: center;
+    padding: 0.5rem;
+    margin: 0.5rem;
+    color:#ffe81fff ;
+
+    border: 2px solid #ffe81fff;
+    background-color: transparent; 
+    box-shadow: 2px 2px 5px  #ffe81fff;
+}
+
 .header-btn {
     height: 3em;
     width: 8em;

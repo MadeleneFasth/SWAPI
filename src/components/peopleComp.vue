@@ -4,7 +4,9 @@
 // import headerNavVue from './headerNav.vue';
 
 export default {
-    props: ['name', 
+    props: [
+            
+    'name', 
     'height',
     'hair_color',
     'skin_color',

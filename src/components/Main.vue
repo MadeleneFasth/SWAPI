@@ -1,5 +1,4 @@
 <script>
-import { VueElement } from 'vue';
 import PeopleComp from './PeopleComp.vue';
 import PlanetsComp from './PlanetsComp.vue';
 import FilmsComp from './FilmsComp.vue';

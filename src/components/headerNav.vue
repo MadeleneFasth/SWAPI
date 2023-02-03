@@ -20,8 +20,6 @@ import starshipsComp from './starshipsComp.vue';
         data() {
             return {
 
-                pageCount: 2,
-
                 listItems: [],
                 item: {},
 
@@ -107,8 +105,8 @@ import starshipsComp from './starshipsComp.vue';
                 <li class="nav-list" @click="clickOnStarships">Starships</li>
             </ul>
         </nav>
-        <button class="header-btn-prev" @click="onPrevBtnClick">previous</button>
-        <button class="header-btn-nxt" @click="onNxtBtnClick">next</button>
+        <img src="../assets/leftArrow.svg" class="header-btn-prev" @click="onPrevBtnClick" />
+        <img src="../assets/rightArrow.svg" class="header-btn-nxt" @click="onNxtBtnClick" />
     </header>
 
 
@@ -132,10 +130,10 @@ import starshipsComp from './starshipsComp.vue';
 
 <style>
 
-.header-btn {
-    height: 3em;
-    width: 8em;
-    background-color: rgb(203, 22, 104);
+.header-btn-prev,
+.header-btn-nxt {
+    margin-top: .5em;
+    width: 2.5em;
 }
 
 
@@ -148,29 +146,6 @@ header {
 padding-top: 3em;
 }
 
-/* button {
-    min-width: 10rem;
-    background-color: white;
-    border: none;
-    padding: 1rem;
-    margin: 1rem; 
-    text-align: center;
-    text-decoration: none;
-} */
-
-/* nav {
-    background-color:  #B3B3B3;
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-end;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-content: center;
-    align-items: center;
-    min-height: 10em;
-} */
-
-
 header img {
 padding-left: 1em;
 }
@@ -182,16 +157,9 @@ header h2 {
 }
 
 .nav-ul {
-    /* background-color:  #B3B3B3; */
     display: flex;
     justify-content: space-around;
     height: 4em;
-    /* align-items: flex-end; */
-    /* flex-wrap: wrap; */
-    /* justify-content: space-evenly; */
-    /* align-content: center; */
-    /* align-items: center; */
-    /* min-height: 10em; */
 }
 
 .nav-list {

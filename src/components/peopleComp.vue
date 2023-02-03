@@ -1,8 +1,6 @@
 <script>
 // import { registerRuntimeCompiler } from 'vue';
 
-// import headerNavVue from './headerNav.vue';
-
 export default {
     props: [
 

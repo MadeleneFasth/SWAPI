@@ -1,21 +1,21 @@
 <script>
 import { VueElement } from 'vue';
-import peopleComp from './peopleComp.vue';
-import planetsComp from './planetsComp.vue';
-import filmsComp from './filmsComp.vue';
-import speciesComp from './speciesComp.vue';
-import vehiclesComp from './vehiclesComp.vue';
-import starshipsComp from './starshipsComp.vue';
+import PeopleComp from './PeopleComp.vue';
+import PlanetsComp from './PlanetsComp.vue';
+import FilmsComp from './FilmsComp.vue';
+import SpeciesComp from './SpeciesComp.vue';
+import VehiclesComp from './VehiclesComp.vue';
+import StarshipsComp from './StarshipsComp.vue';
 
 
   export default {
     components: {
-        peopleComp,
-        planetsComp,
-        filmsComp,
-        speciesComp,
-        vehiclesComp,
-        starshipsComp
+        PeopleComp,
+        PlanetsComp,
+        FilmsComp,
+        SpeciesComp,
+        VehiclesComp,
+        StarshipsComp
     },
         data() {
             return {
@@ -43,29 +43,29 @@ import starshipsComp from './starshipsComp.vue';
             },
                 
             async clickOnPeople() {
-                this.clickFetch(peopleComp, "https://swapi.dev/api/people/?format=json")
+                this.clickFetch(PeopleComp, "https://swapi.dev/api/people/?format=json")
             },
 
             async clickOnPlanets() {
-                this.clickFetch(planetsComp, "https://swapi.dev/api/planets/?format=json")
+                this.clickFetch(PlanetsComp, "https://swapi.dev/api/planets/?format=json")
             },
 
             async clickOnFilms() {
                 let isFilmCategory = true;
-                this.clickFetch(filmsComp, "https://swapi.dev/api/films/?format=json", isFilmCategory)
+                this.clickFetch(FilmsComp, "https://swapi.dev/api/films/?format=json", isFilmCategory)
 
             },
 
             async clickOnSpecies() {
-                this.clickFetch(speciesComp, "https://swapi.dev/api/species/?format=json")
+                this.clickFetch(SpeciesComp, "https://swapi.dev/api/species/?format=json")
             },
 
             async clickOnVehicles() {
-                this.clickFetch(vehiclesComp, "https://swapi.dev/api/vehicles/?format=json")
+                this.clickFetch(VehiclesComp, "https://swapi.dev/api/vehicles/?format=json")
             },
 
             async clickOnStarships() {
-                this.clickFetch(starshipsComp, "https://swapi.dev/api/starships/?format=json")
+                this.clickFetch(StarshipsComp, "https://swapi.dev/api/starships/?format=json")
             },
 
             onNxtBtnClick() {

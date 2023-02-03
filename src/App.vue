@@ -1,11 +1,11 @@
 <script setup>
-import headerNav from './components/headerNav.vue';
+import Main from './components/Main.vue';
 
 </script>
 
 
 <template>
-  <headerNav />
+  <Main />
 </template>
 
 

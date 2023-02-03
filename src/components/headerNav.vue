@@ -19,16 +19,11 @@ import starshipsComp from './starshipsComp.vue';
     },
         data() {
             return {
-
                 item: {},
-
                 globalList: [],
                 clickedItem: '',
-
                 filmsList: [],
-
                 comp: []
-
             }
         },
         methods: {

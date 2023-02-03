@@ -34,13 +34,7 @@ import starshipsComp from './starshipsComp.vue';
 
             }
         },
-        mounted() {
-            fetch("https://swapi.dev/api/?format=json")
-            .then(res => res.json())
-            .then(data => this.listItems = data)
-            .catch(err => console.log(err.message))
-
-        },
+ 
         methods: {
 
             async clickFetch(comp, url, isFilmCategory) { //default för parameter är undefined

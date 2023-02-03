@@ -141,13 +141,6 @@ import starshipsComp from './starshipsComp.vue';
     box-shadow: 2px 2px 5px  #ffe81fff;
 }
 
-.header-btn {
-    height: 3em;
-    width: 8em;
-    background-color: rgb(203, 22, 104);
-}
-
-
 body {
     position: relative;
     background-image: url(../assets/backgroundStars.png);

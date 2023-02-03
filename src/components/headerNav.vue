@@ -110,8 +110,8 @@ import starshipsComp from './starshipsComp.vue';
 
 <div class="sub_category">
     <li v-for="item in globalList">
-            <label @click="clickedItem = item.name ">{{item.name}}</label> //OCH TA UT INDEX SOM SKICKAS TILL component. 
-            <component :is="comp" v-bind = 'item' v-if = 'item.name == clickedItem'/> // här vill jag skicka in namnet i en ny funktion som tar
+            <label @click="clickedItem = item.name ">{{item.name}}</label>
+            <component :is="comp" v-bind = 'item' v-if = 'item.name == clickedItem'/>
     </li>
 
 
@@ -143,29 +143,6 @@ body {
 header {
 padding-top: 3em;
 }
-
-/* button {
-    min-width: 10rem;
-    background-color: white;
-    border: none;
-    padding: 1rem;
-    margin: 1rem; 
-    text-align: center;
-    text-decoration: none;
-} */
-
-/* nav {
-    background-color:  #B3B3B3;
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-end;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-content: center;
-    align-items: center;
-    min-height: 10em;
-} */
-
 
 header img {
 padding-left: 1em;
@@ -205,7 +182,6 @@ header h2 {
 }
 
 .sub_category li {
-    background-image: url(../assets/backgroundStars.png);
     font-family: 'Righteous', cursive;
     min-height: 4rem;
     max-width: 10rem;
@@ -229,7 +205,6 @@ label {
 .sub_category {
     min-height: 800px;
     padding: 1rem;
-    /* background-color: transparent; */
 }
 
 .card {

@@ -23,7 +23,7 @@ import starshipsComp from './starshipsComp.vue';
                 pageCount: 2,
 
                 listItems: [],
-                item: {}, //this.item.next
+                item: {},
 
                 globalList: [],
                 clickedItem: '',
@@ -59,64 +59,26 @@ import starshipsComp from './starshipsComp.vue';
                 
             async clickOnPeople() {
                 this.clickFetch(peopleComp, "https://swapi.dev/api/people/?format=json")
-                // let thisComp = peopleComp;
-                // this.comp = thisComp;
-                // const res = await fetch("https://swapi.dev/api/people/?format=json");
-                // const finalRes = await res.json();
-                // this.item = finalRes;
-                // this.globalList = finalRes.results;
-                // this.filmsList = []
             },
 
             async clickOnPlanets() {
                 this.clickFetch(planetsComp, "https://swapi.dev/api/planets/?format=json")
-                // let thisComp = planetsComp;
-                // this.comp = thisComp;
-                // const res = await fetch("https://swapi.dev/api/planets/?format=json");
-                // const finalRes = await res.json();
-                // this.item = finalRes;
-                // this.globalList = finalRes.results;
-                // this.filmsList = []
             },
 
             async clickOnFilms() {
-                let thisComp = filmsComp;
-                this.comp = thisComp;
-                const res = await fetch("https://swapi.dev/api/films/?format=json");
-                const finalRes = await res.json();
-                this.item = finalRes;
-                this.filmsList = finalRes.results;
-                this.globalList = []
+                this.clickFetch(filmsComp, "https://swapi.dev/api/films/?format=json")
             },
 
             async clickOnSpecies() {
-                let thisComp = speciesComp;
-                this.comp = thisComp;
-                const res = await fetch("https://swapi.dev/api/species/?format=json");
-                const finalRes = await res.json();
-                this.item = finalRes;
-                this.globalList = finalRes.results;
-                this.filmsList = []
+                this.clickFetch(speciesComp, "https://swapi.dev/api/species/?format=json")
             },
 
             async clickOnVehicles() {
-                let thisComp = vehiclesComp;
-                this.comp = thisComp;
-                const res = await fetch("https://swapi.dev/api/vehicles/?format=json");
-                const finalRes = await res.json();
-                this.item = finalRes;
-                this.globalList = finalRes.results;
-                this.filmsList = []
+                this.clickFetch(vehiclesComp, "https://swapi.dev/api/vehicles/?format=json")
             },
 
             async clickOnStarships() {
-                let thisComp = starshipsComp;
-                this.comp = thisComp;
-                const res = await fetch("https://swapi.dev/api/starships/?format=json");
-                const finalRes = await res.json();
-                this.item = finalRes;
-                this.globalList = finalRes.results;
-                this.filmsList = []
+                this.clickFetch(starshipsComp, "https://swapi.dev/api/starships/?format=json")
             },
 
             onNxtBtnClick() {
@@ -128,8 +90,6 @@ import starshipsComp from './starshipsComp.vue';
             }
         }
     }
-
-
 </script>
 
 
